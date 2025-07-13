@@ -50,8 +50,8 @@ module Faker
     def self.load_data(filename)
       ::File.readlines(
         ::File.join(::File.expand_path("../../data", __dir__), filename),
-        chomp: true,
-      ).map { it.split("\t", 2) }
+        chomp: true
+      ).map { |line| line.split("\t", 2) }
     end
   end
 end

@@ -101,8 +101,8 @@ class TestFakerJapaneseName < Minitest::Test
 
   def test_name_is_composed_of_family_and_given
     name = Faker::JapaneseName.name
-    family, given = name[:name].split(' ', 2)
-    family_kana, given_kana = name[:kana].split(' ', 2)
+    family, given = name[:name].split(" ", 2)
+    family_kana, given_kana = name[:kana].split(" ", 2)
     assert family
     assert given
     assert family_kana
