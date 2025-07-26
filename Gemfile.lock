@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    faker-japanese-name (0.2.1)
+    faker-japanese-name (0.2.2)
       faker (~> 3.0)
 
 GEM
