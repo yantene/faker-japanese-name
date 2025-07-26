@@ -108,4 +108,28 @@ class TestFakerJapaneseName < Minitest::Test
     assert family_kana
     assert given_kana
   end
+
+  def test_family_name_kana_is_hiragana_only
+    family_names = Faker::JapaneseName.send(:load_data, "family_name.dat")
+    family_names.each do |name_data|
+      kana = name_data[1]
+      assert_match(/\A\p{Hiragana}+\z/, kana, "Family name kana should contain only hiragana characters: #{kana}")
+    end
+  end
+
+  def test_male_given_name_kana_is_hiragana_only
+    male_names = Faker::JapaneseName.send(:load_data, "male_given_name.dat")
+    male_names.each do |name_data|
+      kana = name_data[1]
+      assert_match(/\A\p{Hiragana}+\z/, kana, "Male given name kana should contain only hiragana characters: #{kana}")
+    end
+  end
+
+  def test_female_given_name_kana_is_hiragana_only
+    female_names = Faker::JapaneseName.send(:load_data, "female_given_name.dat")
+    female_names.each do |name_data|
+      kana = name_data[1]
+      assert_match(/\A\p{Hiragana}+\z/, kana, "Female given name kana should contain only hiragana characters: #{kana}")
+    end
+  end
 end
